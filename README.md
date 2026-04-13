@@ -40,3 +40,17 @@ To validate the architecture, I established an SSH connection from the public EC
 
 ```bash
 ssh -i chave-projeto.pem ec2-user@10.0.2.xxx
+```
+## This confirmed that:
+
+- The backend is not reachable from the internet
+- Internal communication inside the VPC works as expected
+- Access between layers is explicitly controlled
+  
+## Lessons learned:
+
+- Network segmentation is a core part of cloud security
+- Security Groups can be used to enforce trusted communication between resources
+- Private resources should not be directly exposed to the internet
+- Designing the architecture before implementation improves clarity and reduces mistakes
+- Understanding traffic flow helps build more secure cloud environments
